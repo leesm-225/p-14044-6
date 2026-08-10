@@ -14,11 +14,11 @@ on:
   push:
     paths:
       - ".github/workflows/**"
-      - "backend/.env"
-      - "backend/src/**"
-      - "backend/build.gradle.kts"
-      - "backend/settings.gradle.kts"
-      - "backend/Dockerfile"
+      - "back/.env"
+      - "back/src/**"
+      - "back/build.gradle.kts"
+      - "back/settings.gradle.kts"
+      - "back/Dockerfile"
     branches:
       - main
 

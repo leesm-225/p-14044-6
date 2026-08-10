@@ -1,5 +1,5 @@
 # 첫 번째 스테이지: 빌드 스테이지
-FROM gradle:jdk-21-and-23-graal-jammy AS builder
+FROM gradle:9.6-jdk25-graal AS builder
 
 # 작업 디렉토리 설정
 WORKDIR /app
@@ -7,6 +7,7 @@ WORKDIR /app
 # 소스 코드와 Gradle 래퍼 복사
 COPY build.gradle.kts .
 COPY settings.gradle.kts .
+COPY gradle gradle
 
 # 종속성 설치
 RUN gradle dependencies --no-daemon
@@ -19,7 +20,7 @@ COPY src src
 RUN gradle build --no-daemon
 
 # 두 번째 스테이지: 실행 스테이지
-FROM container-registry.oracle.com/graalvm/jdk:21
+FROM container-registry.oracle.com/graalvm/jdk:25
 
 # 작업 디렉토리 설정
 WORKDIR /app

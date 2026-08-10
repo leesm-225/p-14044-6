@@ -45,9 +45,15 @@ dependencies {
 
     // Database
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("com.mysql:mysql-connector-j")
 
     // Dev
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+    implementation("org.springframework.boot:spring-boot-starter-actuator")//외부에서 스프링 부트의 상태를 알 수 있게함
+    implementation("org.springframework.boot:spring-boot-starter-cache")
+    implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
+    implementation("org.springframework.boot:spring-boot-starter-session-data-redis")
 
     // JJWT
     implementation("io.jsonwebtoken:jjwt-api:0.13.0")

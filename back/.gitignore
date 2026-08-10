@@ -43,3 +43,10 @@ db_dev.trace.db
 db_dev.lock.db
 .env
 .kotlin
+
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.tfstate.lock.info
+secrets.tf
